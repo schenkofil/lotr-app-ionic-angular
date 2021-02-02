@@ -1,0 +1,7 @@
+{
+  "name": "lotr-app-ionic-angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
