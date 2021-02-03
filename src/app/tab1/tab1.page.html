@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <!-- Input with placeholder -->
+      <ion-input [(ngModel)]="listType" placeholder="Type movie, book or character"></ion-input>
+      <ion-button (click)="btnClicked()" expand="block">Show</ion-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    </ion-card-content>
+    </ion-card>
+    
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-list>
+          <ion-item *ngFor="let person of response; let i = index">
+          <ion-label>{{ person.name }}</ion-label>
+          <ion-button (click)="addToFavourites(person.name)">Add to favourites</ion-button>
+        </ion-item>
+      </ion-list>
+
 </ion-content>
+
+
+
